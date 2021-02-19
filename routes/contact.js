@@ -2,27 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Contact = require('../models/contact');
 
-// All contacts route.
-router.get('/', async (req, res) => {
-    let searchOptions = {};
 
-    if (req.query.firstname != null && req.query !== '') {
-        searchOptions.firstname = new RegExp(req.query.firstname, 'i');
-    }
-    if (req.query.lastname != null && req.query !== '') {
-        searchOptions.lastname = new RegExp(req.query.lastname, 'i');
-    }
-
-    try {
-        const contacts = await Contact.find(searchOptions);
-        res.render('contacts/index', {
-            contacts: contacts,
-            seachOptions: req.query
-        });
-    } catch {
-        res.redirect('/');
-    }
-});
 
 
 // New contact route.
@@ -52,3 +32,27 @@ router.post('/', async (req, res) => {
 });
 
 module.exports = router;
+
+
+// All contacts route.
+router.get('/', async (req, res) => {
+	let searchOptions = {};
+
+	if (req.query.firstname != null && req.query !== '') {
+		searchOptions.firstname = RegExp(req.query.firstname, 'i');
+	}
+	if (req.query.lastname != null && req.query !== '') {
+		searchOptions.lastname = RegExp(req.query.lastname, 'i');
+	}
+
+	try {
+		const contacts = await Contact.find(searchOptions);
+		res.render('contacts/index', {
+			contacts: contacts,
+			searchOptions. req.query
+		});
+	} catch {
+		res.redirect('/');
+	}
+
+});
