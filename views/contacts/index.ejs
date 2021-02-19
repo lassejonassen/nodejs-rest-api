@@ -1,0 +1,13 @@
+<% contacts.forEach(contact => { %>
+<div>
+    <p><%= contact.firstname %> </p>
+</div>
+<div>
+    <p><%= contact.lastname %> </p>
+</div>
+<div>
+    <p><%= contact.mobile %> </p>
+</div>
+<a href="/contacts/<%= contact.id %>">View</a>
+    <a href="/contacts/<%= contact.id %>/edit">Edit</a>
+<% }) %>

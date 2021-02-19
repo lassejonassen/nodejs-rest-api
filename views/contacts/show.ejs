@@ -1,0 +1,4 @@
+<h2><%= contact.firstname %> <%= contact.lastname %></h2>
+<h3><%= contact.mobile %> </h3>
+<a href="contacts/<%= contact.id %>/edit">Edit contact</a>
+<%- include('..partials/deleteform', { url: `/contacts/${ contact.id }`}) %>

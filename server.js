@@ -33,7 +33,7 @@ db.once('open', () => console.log('Connected to mongoose.'))
 
 //Routes
 app.use('/', indexRouter);
-app.use('/contact', contactRouter);
+app.use('/contacts', contactRouter);
 
 
 const PORT = 3000;
