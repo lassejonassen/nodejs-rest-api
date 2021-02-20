@@ -1,16 +1,54 @@
 <div id="firstName">
     <label>Firstname</label>
-    <input type="text" name="firstname" value="<%= contact.firstname %>">
+    <input type="text" name="firstname" value="<%= contact.firstname%>">
 </div>
 <div id="lastName">
     <label>Lastname</label>
     <input type="text" name="lastname" value="<%= contact.lastname %>">
 </div>
-<div id="number">
-    <label>Number</label>
-    <input type="number" name="number" value="<%= contact.mobile %>">
+<div id="company">
+    <label>Company</label>
+    <input type="text" name="company" value="<%= contact.company %>">
 </div>
-<div id="notes">
-    <label>Notes</label>
-    <textarea name="notes"></textarea>
-</div> 
+<div id="jobTitle">
+    <label>Job Title</label>
+    <input type="text" name="jobtitle" value="<%= contact.jobTitle %>">
+</div>
+<div id="pvtMobile">
+    <label>Private Mobile</label>
+    <input type="number" name="pvtMobile" value="<%= contact.pvtMobile %>">
+</div>
+<div id="wrkMobile">
+    <label>Work Mobile</label>
+    <input type="number" name="wrkMobile" value="<%= contact.wrkMobile %>">
+</div>
+<div id="pvtEmail">
+    <label>Private Email</label>
+    <input type="email" name="pvtEmail" value="<%= contact.pvtEmail %>">
+</div>
+<div id="wrkEmail">
+    <label>Private Email</label>
+    <input type="email" name="wrkEmail" value="<%= contact.wrkEmail %>">
+</div>
+<%- include('_address_fields') %>
+<%- include('_birthday_fields') %>
+<div id="relation">
+    <select>
+        <option>Mother</option>
+        <option>Father</option>
+        <option>Brother</option>
+        <option>Sister</option>
+        <option>Son</option>
+        <option>Daugther</option>
+        <option>Grandmother</option>
+        <option>Grandfather</option>
+        <option>Aunt</option>
+        <option>Uncle</option>
+        <option>Friend</option>
+        <option>Manager</option>
+        <option>Work</option>
+        <option>Husband</option>
+        <option>Wife</option>
+        <option>Girlfriend</option>
+    </select>
+</div>
