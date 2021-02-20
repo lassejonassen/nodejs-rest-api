@@ -6,7 +6,7 @@ const Contact = require('../models/contact');
 router.get('/', async (req, res) => {
     let contacts;
     try {
-        contacts = await Contact.find().limit(3).exec();
+        contacts = await Contact.find().sort({ createdAt: 'desc' }).limit(3).exec();
     } catch {
         contacts = []
     }
