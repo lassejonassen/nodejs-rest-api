@@ -1,37 +1,8 @@
 1. Landekoder
 2. Validering
-3. Alle kontakt informationer
 4. Gruppeinddeling
-5. Flere telefoner
-6. Flere emails
-7. Birthday
-8. Address
-9. Relations
 
 
-
-
-
-
-New Models:
-Adress Models
-Birthday Models
-
-
-
-
-
-
-Attributes to add to a contact.
-1. Firstname
-2. Lastname
-3. Company
-4. Job Title
-5. Private mobile number
-6. Work mobile number
-6. Private email address
-7. Work email address
-8. Address
-9. Birthday
-10. Social profiles
-11. Relation
+1. Style Show page
+2. Delete func
+3. Edit func

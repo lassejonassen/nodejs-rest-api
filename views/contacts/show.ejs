@@ -1,4 +1,27 @@
-<h2><%= contact.firstname %> <%= contact.lastname %></h2>
-<h3><%= contact.mobile %> </h3>
-<a href="contacts/<%= contact.id %>/edit">Edit contact</a>
-<%- include('..partials/deleteform', { url: `/contacts/${ contact.id }`}) %>
+<div id="showContainer">
+    <div id="leftShowContainer">
+        <p><%= contact.firstname %></p>
+        <p><%= contact.lastname %></p>
+        <p><%= contact.pvtMobile %></p>
+        <p><%= contact.pvtEmail %></p>
+        <br>
+    </div>
+    <div id="middleShowContainer">
+        <p><%= contact.wrkMobile %></p>
+        <p><%= contact.wrkEmail %></p>
+        <p><%= contact.company %></p>
+        <p><%= contact.jobTitle %></p>
+        <br>
+    </div>
+    <div id="rightShowContainer">
+        <p><%= address.street %></p>
+        <p><%= address.zipCode %></p>
+        <p><%= address.city %></p>
+        <p><%= address.country %></p>
+        <br>
+        <p><%= birthday.day %></p>
+        <p><%= birthday.month %></p>
+        <p><%= birthday.year %></p>
+        <%- include('../partials/deleteform', { url: `/contacts/${ contact.id }`}) %>
+    </div>
+</div>
