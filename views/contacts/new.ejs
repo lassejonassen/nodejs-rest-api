@@ -1,5 +1,7 @@
-<form action="/contacts" method="POST">
-    <%- include('_form_fields') %>
-    <a href="/books">Cancel</a> 
-    <button type="submit">Create</button>
-</form>
+<div id="newContainer">
+    <form action="/contacts" method="POST">
+        <%- include('_form_fields') %>
+        <a href="/contacts" id="cancelContact">Cancel</a> 
+        <button type="submit" id="createContact">Create</button>
+    </form>
+</div>

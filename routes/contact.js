@@ -17,10 +17,8 @@ router.get('/', async (req, res) => {
             contacts: contacts
         });
     } catch {
-
-    }
-
-    
+        res.redirect('/');
+    }    
 });
 
 // New Contact route.
@@ -30,11 +28,8 @@ router.get('/new', (req, res) => {
 
 // Create Contact route.
 router.post('/', async (req, res) => {
-    console.log(req.body.firstname);
-    console.log(req.body.lastname);
-    console.log(req.body.number);
-    console.log(req.body.notes);
-
+    const params = {};
+    // Creating the Contact object.
     const contact = new Contact({
         firstname: req.body.firstname,
         lastname: req.body.lastname,

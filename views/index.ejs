@@ -1,1 +1,8 @@
-<h1>Contact book - <%= title %></h1>
+<h2 class="ContentHeading">Recently Added Contacts</h2>
+<div id="recentlyAdded">
+    <% contacts.forEach(contact => { %>
+        <a href="/contacts/<%= contact.id %>">
+            <%= contact.firstname %> <%= contact.lastname %> 
+        </a>
+      <% }) %>
+</div>

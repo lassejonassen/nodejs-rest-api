@@ -1,13 +1,18 @@
-<% contacts.forEach(contact => { %>
-<div>
-    <p><%= contact.firstname %> </p>
+    
+<h2 class="ContentHeading">All contacts</h2>
+<div id="contactContainer">
+    <% contacts.forEach(contact => { %>
+        <div class="Contact">
+            <div class="ContactInfo">
+                <p><%= contact.firstname %></p>
+                <p><%= contact.lastname %></p>
+                <p><%= contact.mobile%></p>
+            </div>
+            <div class="ContactButtons">
+                <a href="/contacts/<%= contact.id%>" class="ViewContact">View</a>
+                <a href="/contacts/<%= contact.id%>/edit" class="EditContact">Edit</a>
+                <%- include('../partials/deleteform', { url: `/contacts/${ contact.id }`}) %>
+            </div>
+        </div>
+    <% }) %> 
 </div>
-<div>
-    <p><%= contact.lastname %> </p>
-</div>
-<div>
-    <p><%= contact.mobile %> </p>
-</div>
-<a href="/contacts/<%= contact.id %>">View</a>
-    <a href="/contacts/<%= contact.id %>/edit">Edit</a>
-<% }) %>
