@@ -1,8 +1,0 @@
-1. Landekoder
-2. Validering
-4. Gruppeinddeling
-
-
-1. Style Show page
-2. Delete func
-3. Edit func

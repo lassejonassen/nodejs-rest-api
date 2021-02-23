@@ -114,8 +114,15 @@ router.get('/:id', async (req, res ) => {
 /*****************************************/
 router.get('/:id/edit', async (req, res) => {
     try {
-        const contact = await Contact.findById(req.params.id);
-        const params = { contact: contact, title: 'Edit' };
+        const contact = await Contact.findById(req.params.id).exec();
+        const address = await Address.findById(contact.address).exec();
+        const birthday = await Birthday.findById(contact.birthday).exec();
+        const params = { 
+            contact: contact, 
+            address: address, 
+            birthday: birthday,
+            title: 'Edit' 
+        };
         res.render('contacts/edit', params);
     } catch {
         res.redirect('/');
@@ -128,25 +135,52 @@ router.get('/:id/edit', async (req, res) => {
 /*****************************************/
 router.put('/:id', async (req, res) => {
     let contact;
+    let address;
+    let birthday;
 
     try {
-        contact = await Book.findById(req.params.id);
+        contact = await Contact.findById(req.params.id).exec();
+        address = await Address.findById(contact.address).exec();
+        birthday = await Birthday.findById(contact.birthday).exec();
         contact.firstname = req.body.firstname;
         contact.lastname = req.body.lastname;
-        contact.mobile = req.body.number;
+        contact.company = req.body.company;
+        contact.jobTitle = req.body.jobTitle;
+        contact.pvtMobile = req.body.pvtMobile;
+        contact.wrkMobile = req.body.wrkMobile;
+        contact.pvtEmail = req.body.pvtEmail;
+        contact.wrkEmail = req.body.wrkEmail;
+        contact.relation = req.body.relation;
+        contact.notes = req.body.notes;
+        address.street = req.body.street;
+        address.zipCode = req.body.zipCode;
+        address.city = req.body.city;
+        address.country =req.body.country;
+        contact.address = address;
+        birthday.day = req.body.day;
+        birthday.month = req.body.month;
+        birthday.year = req.body.year;
+        contact.birthday = birthday;
     } catch {
-        if (contact != null) {
-            res.render('contacts/edit', params);
+        if (contact != null || address != null || birthday != null) {
+            res.render('contacts/edit');
         } else {
             res.redirect('/');
         }
     }
-
     try {
+        const params = {}
         const newContact = await contact.save();
-        res.redirect(`contacts/${ newContact.id }`);
+        params.contact = newContact;
+        const newAddress = await address.save();
+        params.address = newAddress;
+        const newBirthday = await birthday.save();
+        params.birthday = newBirthday;
+        params.title = 'Success';
+        res.render('contacts/show', params);
     } catch {
-        res.render('contacts/edit', params);
+        res.render('contacts/edit');
+        console.log('failed');
     }
 });
 
@@ -154,7 +188,24 @@ router.put('/:id', async (req, res) => {
 /*****************************************/
 /*         Delete Contact route          */
 /*****************************************/
+router.delete('/:id', async (req, res) => {
+    let contact;
 
+    try {
+        contact = await Contact.findById(req.params.id);
+        await contact.remove()
+        res.redirect('/contacts')
+    } catch {
+        if (contact != null) {
+            res.render('contact/show', {
+              contact: contact,
+              errorMessage: 'Could not remove contact'
+            })
+          } else {
+            res.redirect('/')
+          }
+    }
+});
 
 
 module.exports = router;

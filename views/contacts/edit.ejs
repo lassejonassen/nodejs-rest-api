@@ -1,6 +1,8 @@
-<h2>Edit Contact</h2>
-<form action="/contacts/<%= contact.id %>?_method=PUT" method="POST">
-    <%- include('_form_fields') %>
-    <a href="/books">Cancel</a> 
-    <button type="submit">Create</button>
-</form>
+<section id="addContact">
+    <h3 class="PageHeading">Editing Contact: <%= contact.firstname %> <%= contact.lastname %></h3>
+    <form action="/contacts/<%= contact.id %>?_method=PUT" method=POST>
+        <%- include('_form_fields') %>
+        <a href="/contacts">Cancel</a>
+        <button type="submit">Update</button>
+    </form>
+</section>

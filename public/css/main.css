@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
 
+
+/***************************************/
+/*                global               */
+/***************************************/
 * {
     margin: 0;
     padding: 0;
@@ -7,211 +11,238 @@
     font-family: 'Poppins', sans-serif;
 }
 body {
-    background: rgb(0,93,149);
-    background: linear-gradient(90deg, rgba(0,93,149,1) 0%, rgba(0,164,255,1) 48%, rgba(0,254,255,1) 100%);
+    background: rgb(26, 26, 26);
 }
+
+.PageHeading {
+    color: rgb(189, 189, 189);
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+
+/***************************************/
+/*           partials/header           */
+/***************************************/
+header {
+    margin-bottom: 5rem;
+}
+header h1, h2, p {
+    text-align: center;
+}
+h4 {
+    color:rgb(48, 255, 158);
+    margin-top: 5px;
+}
+
+header h1 {
+    color: white;
+    font-size: 70px;
+}
+
+header h2 {
+    color:rgb(48, 120, 255);
+    font-size: 35px;
+}
+
+header p {
+    color: rgb(189, 189, 189);
+}
+
+section {
+    width: 1500px;
+    margin: auto;
+}
+
 ul {
     display: flex;
     justify-content: center;
-    width: 100%;
     list-style-type: none;
-    margin: auto;
-    margin-top: 200px;
+    margin-top: 100px;
 }
+
 li {
-    margin: 10px;
+    text-align: center;
+    margin: 0px 20px 1px 20px;
     width: 150px;
-    background: orange;
-    border-radius: 50px;
-    padding: 5px;
-    text-align: center;
-    -webkit-box-shadow: 0px 10px 47px -24px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 10px 47px -24px rgba(0,0,0,0.75);
-    box-shadow: 0px 10px 47px -24px rgba(0,0,0,0.75);
-    
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    background:rgb(255, 0, 106);
+    transition: all 0.2s ease;
 }
+
+li:hover {
+    opacity: 0.8;
+}
+
 a {
-    color: white;
     text-decoration: none;
-    font-size: 24px;
-}
-#mainHeading, #mainSubHeading {
-    text-align: center;
+    color: white;
 }
 
-#mainHeading {
-    font-size: 80px;
-}
-#mainSubHeading {
-    font-size: 50px;
-    color: rgb(49, 49, 49);
-}
-#indexHeading {
-    margin-top: 40px;
-    text-align: center;
-}
-#recentlyAdded {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
+/***************************************/
+/*         partials/deleteform         */
+/***************************************/
+.DeleteBtn {
+    background:rgb(255, 0, 106);
+    border: none;
+    outline: none;
+    padding: 3px 6px 3px 6px;
+    font-size: 16px;
+    margin: 10px;
+    margin-left: 130px;
 }
 
 
-.ContentHeading {
+/***************************************/
+/*                 index               */
+/***************************************/
+#recentlyAddedContainer {
     text-align: center;
-    font-size: 30px;
 }
+
+#recentlyAddedContainer a {
+    color:rgb(48, 255, 158);
+    font-size: 18px;
+    text-decoration: underline;
+    border: 2px solid rgb(48, 255, 158);
+    padding: 5px;
+    transition: all 0.2s ease;
+}
+
+#recentlyAddedContainer a:hover {
+    opacity: 0.8;
+}
+
+
+/***************************************/
+/*            contacts/index           */
+/***************************************/
 #contactContainer {
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    width: 1600px;
-    margin: auto;
 }
-.Contact {
-    margin: 0px 40px 40px 40px;
-    background: white;
+
+.ContactCard {
+    background: rgb(228, 228, 228);
+    width: 320px;
     padding: 1rem;
-    width: 350px;
-    height: 150px;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 10px 47px -24px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 10px 47px -24px rgba(0,0,0,0.75);
-    box-shadow: 0px 10px 47px -24px rgba(0,0,0,0.75);
-}
-.ContactButtons {
-    font-size: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.ViewContact, .EditContact {
-    color: black;
-    height: 40px;
-}
-.ViewContact {
-    background:rgb(48, 120, 255);
-    transition: all 0.3s ease;
-}
-.ViewContact:hover {
-    opacity: 0.6;
-}
-.EditContact {
-    background:rgb(48, 255, 158);
-    transition: all 0.3s ease;
-}
-.EditContact:hover {
-    opacity: 0.6;
-}   
-.DeleteButton {
-    background: rgb(255, 93, 93);
-    border: none;
-    outline: none;
-    height: 40px;
-    font-size: 20px;
-    transition: all 0.3s ease;
-}
-.DeleteButton:hover {
-    opacity: 0.6;
+    height: 90px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 3px 17px -2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 3px 17px -2px rgba(0,0,0,1);
+    box-shadow: 0px 3px 17px -2px rgba(0,0,0,1);
 }
 
-.ViewContact, .EditContact, .DeleteButton {
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 20px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: 25px;
-}
-
-
-
-/***************************************/
-/*            New Contact Form         */
-/***************************************/
-#mainSection {
-    display: flex;
-    flex-direction: row;
-}
-.FormInputContainer {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin: auto;
-}
-.FormInputContainer Label {
-    margin-left: 1rem;
-    font-weight: 700;
+.ContactCard p {
+    display: inline;
     font-size: 18px;
 }
 
-.FormInputContainer input {
-    width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 25px;
-    padding: 1rem;
-    font-size: 16px;
+.CardBtns {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
 }
-select {
-    border: none;
-    width: 90%;
-    padding: 1rem;
-    font-size: 16px;
-    margin: auto;
-    border-radius: 25px;
+
+.CardBtns a {
+    color: black;
+    background:rgb(48, 120, 255);
+    padding: 3px;
+    border-radius: 3px;
+    color: white;   
+    transition: all 0.2s ease;
+    margin: 10px 20px 20px 0px;
+    
 }
-.section {
+
+.CardBtns a:hover {
+    opacity: 0.8;
+}
+
+
+/***************************************/
+/*          contacts/new&edit          */
+/***************************************/
+#addContact form {
     display: flex;
     flex-direction: column;
-    width: 33.3%;
-}
-#sectionOne {
-    height:400px;
-}
-#sectionTwo {
-    height: 800px;
-}
-
-/***************************************/
-/*            New Contact Page         */
-/***************************************/
-#newContainer {
-    max-width: 80%;
+    justify-content: center;
     margin: auto;
+    width: 400px;
 }
-#createContact {
-    background:rgb(48, 255, 158);
-    transition: all 0.3s ease;
-    border-radius: 25px;
-    border: none;
-    outline: none;
-    height: 40px;
-    font-size: 20px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-top: 10px;
-}
-#createContact:hover {
-    opacity: 0.6;
-} 
 
-#cancelContact {
-    background: rgb(255, 93, 93);
-    transition: all 0.3s ease;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: 25px;
+#addContact input, select, textarea {
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+#addContact textarea {
+    min-width: 388px;
+    width: 100%;
+    max-width: 388px;
+    min-height: 75px;
+    max-height: 150px;
+}
+
+#addContact a {
+    background:rgb(255, 0, 106);
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#addContact button {
+    background:rgb(48, 255, 158);
+    color: black;
+    font-weight: 700;
     border: none;
     outline: none;
-    height: 40px;
     font-size: 20px;
-    margin-top: 10px;
+    width: 300px;
 }
-#cancelContact:hover {
-    opacity: 0.6;
-} 
+
+
+/***************************************/
+/*             contacts/show           */
+/***************************************/
+
+#showContact div {
+    max-width: 250px;
+    margin: auto;
+    text-align: center;
+}
+
+#showContact p {
+    color: white;
+}
+
+#showContact a {
+    color: black;
+    background:rgb(48, 120, 255);
+    padding: 3px 50px 3px 50px;
+    border-radius: 3px;
+    color: white;   
+}
+
+#showContact button {
+    color: black;
+    width: 100%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#showContact textarea {
+    background: white;
+    min-width: 238px;
+    max-width: 238px;
+    min-height: 75px;
+    max-height: 120px;
+}

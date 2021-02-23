@@ -1,72 +1,7 @@
-<div id="mainSection">
-    <div id="sectionOne" class="section">
-        <div id="firstName" class="FormInputContainer">
-            <label>Firstname</label>
-            <input type="text" name="firstname" value="<%= contact.firstname %>">
-        </div>
-        <div id="lastName" class="FormInputContainer">
-            <label>Lastname</label>
-            <input type="text" name="lastname" value="<%= contact.lastname %>">
-        </div>
-        <div id="pvtMobile" class="FormInputContainer">
-            <label>Private Mobile</label>
-            <input type="number" name="pvtMobile" value="<%= contact.pvtMobile %>">
-        </div>
-        <div id="pvtEmail" class="FormInputContainer">
-            <label>Private Email</label>
-            <input type="email" name="pvtEmail" value="<%= contact.pvtEmail %>">
-        </div>
-    </div>
-    
-    <div id="sectionTwo" class="section">
-        <%- include('_address_fields') %>
-        <%- include('_birthday_fields') %>
-        <div id="relation" class="FormInputContainer">
-            <label>Relation</label>
-            <select name="relation">
-                <option></option>
-                <option>Mother</option>
-                <option>Father</option>
-                <option>Brother</option>
-                <option>Sister</option>
-                <option>Son</option>
-                <option>Daugther</option>
-                <option>Grandmother</option>
-                <option>Grandfather</option>
-                <option>Aunt</option>
-                <option>Uncle</option>
-                <option>Friend</option>
-                <option>Manager</option>
-                <option>Work</option>
-                <option>Husband</option>
-                <option>Wife</option>
-                <option>Girlfriend</option>
-            </select>
-        </div>
-    </div>
-    
-    
-    
-    <div id="sectionThree" class="section">
-        <div id="company" class="FormInputContainer">
-            <label>Company</label>
-            <input type="text" name="company" value="<%= contact.company %>">
-        </div>
-        <div id="jobTitle" class="FormInputContainer">
-            <label>Job Title</label>
-            <input type="text" name="jobTitle" value="<%= contact.jobTitle %>">
-        </div>
-        <div id="wrkMobile" class="FormInputContainer">
-            <label>Work Mobile</label>
-            <input type="number" name="wrkMobile" value="<%= contact.wrkMobile %>">
-        </div>
-        <div id="wrkEmail" class="FormInputContainer">
-            <label>Private Email</label>
-            <input type="email" name="wrkEmail" value="<%= contact.wrkEmail %>">
-        </div>
-    </div>
-</div>
-
+<%- include('_basic_fields') %>
+<%- include('_address_fields') %>
+<%- include('_birthday_fields') %>
+<textarea name="notes" placeholder="Notes"></textarea>
 
 
 

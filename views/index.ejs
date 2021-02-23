@@ -1,8 +1,10 @@
-<h2 class="ContentHeading">Recently Added Contacts</h2>
-<div id="recentlyAdded">
-    <% contacts.forEach(contact => { %>
-        <a href="/contacts/<%= contact.id %>">
-            <%= contact.firstname %> <%= contact.lastname %> 
-        </a>
-      <% }) %>
-</div>
+<section id="indexSection">
+    <h3 class="PageHeading">Recently Added Contacts</h3>
+    <div id="recentlyAddedContainer">
+        <% contacts.forEach(contact => { %>
+            <a href="/contacts/<%= contact.id %>">
+                <%= contact.firstname %> <%= contact.lastname %> 
+            </a>
+        <% }) %>
+    </div>
+</section>

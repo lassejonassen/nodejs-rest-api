@@ -1,27 +1,26 @@
-<div id="showContainer">
-    <div id="leftShowContainer">
+<section id="showContact">
+    <h3 class="PageHeading">Showing: <%= contact.firstname %> <%= contact.lastname %></h3>
+    <div>
         <p><%= contact.firstname %></p>
         <p><%= contact.lastname %></p>
         <p><%= contact.pvtMobile %></p>
         <p><%= contact.pvtEmail %></p>
-        <br>
-    </div>
-    <div id="middleShowContainer">
+        <h4>Work</h4>
         <p><%= contact.wrkMobile %></p>
         <p><%= contact.wrkEmail %></p>
         <p><%= contact.company %></p>
         <p><%= contact.jobTitle %></p>
-        <br>
-    </div>
-    <div id="rightShowContainer">
+        <h4>Address</h4>
         <p><%= address.street %></p>
         <p><%= address.zipCode %></p>
         <p><%= address.city %></p>
         <p><%= address.country %></p>
-        <br>
+        <h4>Birthday</h4>
         <p><%= birthday.day %></p>
         <p><%= birthday.month %></p>
         <p><%= birthday.year %></p>
+        <textarea disabled placeholder="Notes...."><%= contact.notes %></textarea>
         <%- include('../partials/deleteform', { url: `/contacts/${ contact.id }`}) %>
+        <a href="/contacts/<%= contact.id %>/edit">Edit</a>
     </div>
-</div>
+</section>

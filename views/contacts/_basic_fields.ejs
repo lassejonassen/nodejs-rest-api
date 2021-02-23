@@ -1,0 +1,38 @@
+<!--
+    Name, relations
+    Private: Mobile, email
+    Work: Mobile, Email, Company, Job title
+-->
+
+<input type="text" name="firstname" value="<%= contact.firstname %>" placeholder="Firstname">
+<input type="text" name="lastname" value="<%= contact.lastname %>" placeholder="Lastname">
+<input type="number" name="pvtMobile" value="<%= contact.pvtMobile %>" placeholder="Private mobile">
+<input type="email" name="pvtEmail" value="<%= contact.pvtEmail %>" placeholder="Private email">
+
+<select name="relation">
+    <option value="" disabled selected>Select Relation</option>
+    <option>None</option>
+    <option>Mother</option>
+    <option>Father</option>
+    <option>Brother</option>
+    <option>Sister</option>
+    <option>Son</option>
+    <option>Daugther</option>
+    <option>Grandmother</option>
+    <option>Grandfather</option>
+    <option>Aunt</option>
+    <option>Uncle</option>
+    <option>Friend</option>
+    <option>Manager</option>
+    <option>Work</option>
+    <option>Husband</option>
+    <option>Wife</option>
+    <option>Girlfriend</option>
+</select>
+
+<h4>Work</h4>
+<input type="text" name="company" value="<%= contact.company %>" placeholder="Company">
+<input type="text" name="jobTitle" value="<%= contact.jobTitle %>" placeholder="Job title">
+<input type="number" name="wrkMobile" value="<%= contact.wrkMobile %>" placeholder="Work mobile">
+<input type="email" name="wrkEmail" value="<%= contact.wrkEmail %>" placeholder="Work email">
+
